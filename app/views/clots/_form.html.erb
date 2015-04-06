@@ -1,0 +1,29 @@
+<%= form_for(@clot) do |f| %>
+  <% if @clot.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@clot.errors.count, "error") %> prohibited this clot from being saved:</h2>
+
+      <ul>
+      <% @clot.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+ 
+ <%= f.fields_for :location do |loc| %>
+ <div>
+    <%= loc.label :address %>
+    <%= loc.text_field :address %>
+  </div>
+ <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

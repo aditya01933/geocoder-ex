@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @clot.name %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @clot.location %>
+</p>
+
+<%= link_to 'Edit', edit_clot_path(@clot) %> |
+<%= link_to 'Back', clots_path %>

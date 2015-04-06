@@ -1,0 +1,27 @@
+<h1>Listing clots</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clots.each do |clot| %>
+      <tr>
+        <td><%= clot.name %></td>
+        <td><%= clot.location %></td>
+        <td><%= link_to 'Show', clot %></td>
+        <td><%= link_to 'Edit', edit_clot_path(clot) %></td>
+        <td><%= link_to 'Destroy', clot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Clot', new_clot_path %>
